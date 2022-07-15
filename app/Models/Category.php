@@ -5,33 +5,26 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Product extends Model
+class Category extends Model
 {
     use HasFactory;
 
     /**
-     * The attributes that are mass assignable for Product table.
+     * The attributes that are mass assignable for Categories table.
      *
      * @var array<int, string>
      */
     protected $fillable = [
-        'product_name',
-        'product_price',
-        'category_id',
-        'product_description',
-        'product_avatar',
+        'category_name',
         'status'
     ];
 
     /**
-     * The attributes that should be cast for Product Table.
+     * The attributes that should be cast for Categories Table.
      *
      * @var array<string, string>
      */
     protected $casts = [
-        'user_id' => 'integer',
-        'product_price' => 'decimal:2',
-        'category_id' => 'integer',
         'status' => 'integer',
         'created_at' => 'timestamp'
     ];
