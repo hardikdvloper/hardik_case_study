@@ -26,6 +26,9 @@ Route::group(['prefix' => 'v1'], function(){
         Route::post('register', [AuthController::class, 'register']);
     });
 
+    // Category List - Without Auth
+    Route::get('category', [ProductController::class,'getCategoryList']);
+
     // Cart's APIs Route - Without Auth
     Route::apiResource('cart', CartController::class);
 

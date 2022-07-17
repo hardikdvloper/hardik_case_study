@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Category;
+use Storage;
 
 class Product extends Model
 {
@@ -45,5 +46,13 @@ class Product extends Model
      */
     public function category() {
         return $this->hasOne(Category::class, 'id', 'category_id')->select('id','category_name');
+    }
+
+    public function getProductAvatarAttribute($filePath){
+        if($filePath) {
+            return asset(Storage::disk('local')->url($filePath));
+        } else {
+            return null;
+        }
     }
 }

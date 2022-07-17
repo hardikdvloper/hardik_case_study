@@ -32,9 +32,13 @@ Generate a new application key
 
     php artisan key:generate
 
-Run the database migrations (**Set the database connection in .env before migrating**)
+Run the database migrations (Set the database connection in .env before migrating)
 
     php artisan migrate
+
+Link public folder with storage path
+
+    php artisan storage:link
 
 Start the local development server
 
