@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Category;
 
 class Product extends Model
 {
@@ -33,6 +34,16 @@ class Product extends Model
         'product_price' => 'decimal:2',
         'category_id' => 'integer',
         'status' => 'integer',
-        'created_at' => 'timestamp'
+        'created_at' => 'timestamp',
+        'updated_at' => 'timestamp'
     ];
+
+    /**
+     * The function get category record with relation
+     *
+     * @var object
+     */
+    public function category() {
+        return $this->hasOne(Category::class, 'id', 'category_id')->select('id','category_name');
+    }
 }

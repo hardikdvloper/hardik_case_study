@@ -26,6 +26,7 @@ class Category extends Model
      */
     protected $casts = [
         'status' => 'integer',
-        'created_at' => 'timestamp'
+        'created_at' => 'timestamp',
+        'updated_at' => 'timestamp'
     ];
 }
