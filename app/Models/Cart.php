@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Product;
 
 class Cart extends Model
 {
@@ -37,6 +38,16 @@ class Cart extends Model
         'user_id' => 'integer',
         'product_id' => 'integer',
         'product_qty' => 'integer',
-        'created_at' => 'timestamp'
+        'created_at' => 'timestamp',
+        'updated_at' => 'timestamp'
     ];
+
+    /**
+     * The function get product record with relation
+     *
+     * @var object
+     */
+    public function product() {
+        return $this->hasOne(Product::class, 'id', 'product_id')->select('id','product_name','product_price','product_description','product_avatar','category_id');
+    }
 }
