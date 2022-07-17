@@ -1,4 +1,4 @@
-# Laravel Example App
+# Laravel Practical - UPayments
 > ### Practical for laravel job and practical provided by "Ali AlHabsi" on linkedin and provided google doc link of complete explanation. [Practical Link](https://docs.google.com/document/d/1j7slVasoNctjnKfcegLqo6isX-tk8Zed/edit).
 
 Practical has been completed.
